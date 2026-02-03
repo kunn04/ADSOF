@@ -1,12 +1,11 @@
-/**
- * Esta clase muestra prueba la funcionalidad de la clase Libro
- * @author: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
- * @version: 1.0
- * Nombre del fichero: BibliotecaApp.java
- */
-
 import java.util.*;
 
+/**
+ * Esta clase muestra prueba la funcionalidad de la clase Libro
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Version: 1.0
+ * Nombre del fichero: BibliotecaApp.java
+ */
 public class BibliotecaApp {
 
     /**

@@ -1,11 +1,11 @@
+import java.util.*;
+
 /**
  * Esta clase representa la biblioteca que contiene la coleccion de libros pedida en la practica.
- * @author: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
- * @version: 1.0
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Version: 1.0
  * Nombre del fichero: Biblioteca.java
  */
-
-import java.util.*;
 
 public class Biblioteca {
     private String nombre;
@@ -16,7 +16,7 @@ public class Biblioteca {
      * Constructor de la clase Biblioteca
      * Contiene la información de la Biblioteca
      * @param nombre String del nombre de la biblioteca
-     * @param l List<Libro> de los libros de la biblioteca
+     * @param l Lista de los libros de la biblioteca
      */
     public Biblioteca(String nombre, List<Libro> l) {
         this.nombre = nombre;
@@ -30,7 +30,7 @@ public class Biblioteca {
     /**
      * Método para obtener los libros de un género determinado
      * @param genero String del género de los libros a buscar
-     * @return List<Libro> de los libros del género indicado
+     * @return Lista de los libros del género indicado
      */
     public List<Libro> librosPorGenero(String genero) {
         if(!librosGenero.containsKey(genero)) {
@@ -51,7 +51,7 @@ public class Biblioteca {
     /**
      * Método para obtener los libros publicados después de un año determinado
      * @param anyoPublicacion int del año de publicación a partir del cual buscar los libros
-     * @return List<Libro> de los libros publicados después del año indicado
+     * @return Lista de los libros publicados después del año indicado
      */
     public List<Libro> librosPosterioresA(int anyoPublicacion) {
         List<Libro> l_aPost = new ArrayList<>();

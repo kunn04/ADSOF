@@ -1,7 +1,7 @@
 /**
  * Esta clase contiene la información de un libro así como su comportamiento en una biblioteca
- * @author: Adrián Gómez y Javier Agüero. adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es
- * @version: 1.0
+ * Autor: Adrián Gómez y Javier Agüero. adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es
+ * Version: 1.0
  * Nombre del fichero: Libro.java
  */
 public class Libro {
@@ -20,11 +20,11 @@ public class Libro {
      * @param autor String del autor de un libro
      * @param ejemplaresDisponibles int del número de ejemplares disponibles de un libro
      */
-    public Libro(String isbn, String titulo, String autor, int ejemplaresDisponobles) {
+    public Libro(String isbn, String titulo, String autor, int ejemplaresDisponibles) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
-        this.ejemplaresDisponibles = ejemplaresDisponobles;
+        this.ejemplaresDisponibles = ejemplaresDisponibles;
     }
 
     /**
@@ -34,18 +34,18 @@ public class Libro {
      * @param titulo String del titulo de un libro
      * @param autor String del autor de un libro
      * @param ejemplaresDisponibles int del número de ejemplares disponibles de un libro
-     * @param generi String del genero de un libro
+     * @param genero String del genero de un libro
      * @param anyoPublicacion int del año de publicación de un libro
      */
-    public Libro(String isbn, String titulo, String autor, int ejemplaresDisponobles, String genero, int anyoPublicacion) {
+    public Libro(String isbn, String titulo, String autor, int ejemplaresDisponibles, String genero, int anyoPublicacion) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
-        this.ejemplaresDisponibles = ejemplaresDisponobles;
+        this.ejemplaresDisponibles = ejemplaresDisponibles;
         this.genero = genero;
         this.anyoPublicacion = anyoPublicacion;
     }
-
+  
     /**
      * Método para verificar si el libro está disponible
      * @return boolean que indica si el libro está disponible o no
@@ -68,7 +68,6 @@ public class Libro {
 
     /**
      * Método para devolver el libro
-     * @return void
      */
     public void devolver() {
         this.ejemplaresDisponibles++;
