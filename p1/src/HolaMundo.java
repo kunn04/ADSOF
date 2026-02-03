@@ -1,7 +1,7 @@
 /**
  * Esta clase muestra en pantalla "Hola Mundo"
- * Autor: Adrián Gómez y . adrian.gomezretamal@estudiante.uam.es
- * Version: 1.0
+ * @author: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * @version: 1.0
  * Nombre del fichero: HolaMundo.java
  */
 public class HolaMundo {

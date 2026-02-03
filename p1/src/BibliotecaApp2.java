@@ -1,6 +1,19 @@
+/**
+ * Esta clase muestra prueba la funcionalidad de la clase Libro y Biblioteca
+ * @author: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * @version: 1.0
+ * Nombre del fichero: BibliotecaApp.java
+ */
+
 import java.util.*;
 
 public class BibliotecaApp2 {
+
+    /**
+     * Punto de entrada de la aplicación
+     * El programa muestra prueba la funcionalidad de la clase Libro y Biblioteca.
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         List<Libro> libros = new ArrayList<> (List.of(
             new Libro("1", "El Quijote", "Miguel de Cervantes", 5, "Aventura", 1800), 
