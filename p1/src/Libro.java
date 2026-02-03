@@ -113,6 +113,8 @@ public class Libro {
         if (this.anyoPublicacion != 0){
             ret += " Año de publicación: " + this.anyoPublicacion;
         }
+        ret += "\n";
+
         return ret;
     }
 }

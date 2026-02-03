@@ -19,10 +19,6 @@ public class BibliotecaApp2 {
             new Libro("1", "El Quijote", "Miguel de Cervantes", 5, "Aventura", 1800), 
             new Libro("2", "El murciélago", "Jo Nesbo", 1, "Aventura", 2000),
             new Libro("3", "Learn Java", "David Hoffman", 6, "Educativo", 2000)));
-
-
-        for (Libro l: libros)
-            System.out.println(l);
         
         Biblioteca biblioteca = new Biblioteca("Biblioteca EPS", libros);    
         System.out.println(biblioteca);
