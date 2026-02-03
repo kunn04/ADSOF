@@ -1,3 +1,10 @@
+/**
+ * Esta clase representa la biblioteca que contiene la coleccion de libros pedida en la practica.
+ * @author: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * @version: 1.0
+ * Nombre del fichero: Biblioteca.java
+ */
+
 import java.util.*;
 
 public class Biblioteca {
