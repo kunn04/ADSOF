@@ -3,7 +3,7 @@ import java.util.*;
 public class BibliotecaApp2 {
     public static void main(String[] args) {
         List<Libro> libros = new ArrayList<> (List.of(
-            new Libro("1", "El Quijote", "Miguel de Cervantes", 5, "Avntura", 1800), 
+            new Libro("1", "El Quijote", "Miguel de Cervantes", 5, "Aventura", 1800), 
             new Libro("2", "El murciélago", "Jo Nesbo", 1, "Aventura", 2000),
             new Libro("3", "Learn Java", "David Hoffman", 6, "Educativo", 2000)));
 

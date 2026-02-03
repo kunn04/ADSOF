@@ -48,6 +48,7 @@ public class Libro {
 
     /**
      * Método para verificar si el libro está disponible
+     * @return boolean que indica si el libro está disponible o no
      */
     public boolean estaDisponible() {
         return this.ejemplaresDisponibles > 0;
@@ -55,6 +56,7 @@ public class Libro {
 
     /**
      * Método para prestar el libro
+     * @return boolean que indica si el préstamo se ha realizado con éxito o no
      */
     public boolean prestar() {
         if (estaDisponible()) {
@@ -66,6 +68,7 @@ public class Libro {
 
     /**
      * Método para devolver el libro
+     * @return void
      */
     public void devolver() {
         this.ejemplaresDisponibles++;
@@ -73,14 +76,16 @@ public class Libro {
 
     /**
      * Método para obtener la descripción del libro
+     * @return String con la descripción del libro
      */
     private String descripcion() {
         String estado = this.estaDisponible() ? "Disponible" : "No disponible";
-        return "'"+this.titulo + "' de " + this.autor + " [" + estado + "[";
+        return "'"+this.titulo + "' de " + this.autor + "." + " [" + estado + "].";
     }
 
     /**
      * Método para obtener el género del libro
+     * @return String del género del libro
      */
     public String getGenero() {
         return genero;
@@ -88,6 +93,7 @@ public class Libro {
 
     /**
      * Método para obtener el año de publicación del libro
+     * @return int del año de publicación del libro
      */
     public int getAnyoPublicacion() {
         return anyoPublicacion;
@@ -95,16 +101,17 @@ public class Libro {
 
     /**
      * Método para imprimir la información del libro
+     * @return String con la información del libro
      */
     @Override
     public String toString(){
         String ret = "ISBN: ";
-        ret += this.isbn + ". " + this.descripcion() + " ("+this.ejemplaresDisponibles+ " ejemplares disponibles)";
+        ret += this.isbn + ". " + this.descripcion() + " ("+this.ejemplaresDisponibles+ " ejemplares disponibles). ";
         if (this.genero != null){
-            ret += this.genero;
+            ret += "Genero: " + this.genero + ".";
         }
         if (this.anyoPublicacion != 0){
-            ret += this.anyoPublicacion;
+            ret += " Año de publicación: " + this.anyoPublicacion;
         }
         return ret;
     }
