@@ -11,7 +11,7 @@ public abstract class TramoTrayecto {
     }
 
     public double tiempo() {
-        retunr 0.0,
+        return 0.0;
     }
 
     public String toString() {

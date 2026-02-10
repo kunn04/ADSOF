@@ -16,12 +16,12 @@ public class TramoAPie extends TramoTrayecto{
         this.numKm = numKm;
     }
 
-    @override
+    @Override
     public double tiempo(){
-        this.numKm*this.ritmo;
+        return this.numKm * this.ritmo;
     }
 
-    @override
+    @Override
     public String toString(){
         return "A pie "+super.toString()+this.ritmo;
     }
