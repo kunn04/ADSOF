@@ -16,6 +16,9 @@ public class TramoAPie extends TramoTrayecto{
         this.numKm = numKm;
     }
 
-    
+    @override
+    public String toString(){
+        return "A pie "+super.toString()+this.ritmo;
+    }
 
 }

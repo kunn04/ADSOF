@@ -11,5 +11,7 @@ public enum Ritmo{
         this.tiempo = tiempo;
     }
 
-    
+    public String toString(){
+        return " (ritmo "+this.ritmo+")";
+    }
 }
