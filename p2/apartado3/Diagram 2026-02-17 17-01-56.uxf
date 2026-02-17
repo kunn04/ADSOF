@@ -1,0 +1,52 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>264</x><y>64</y><w>232</w><h>80</h></coordinates><panel_attributes>Periodico
+--
+- nombre: String
+--
++ getSuscriptoresActivos(): Suscriptor[*]
++ getSuscripcionesDe(dni: String): Suscripcion[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>448</x><y>200</y><w>200</w><h>80</h></coordinates><panel_attributes>Suscriptor
+--
+- dni: String 
+- codigoSuscripcion: int[*]
+- isSuscriptor(): boolean
+--
++ tieneSuscripcionActiva(): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>328</x><y>488</y><w>112</w><h>56</h></coordinates><panel_attributes>Articulo
+--
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>200</y><w>152</w><h>80</h></coordinates><panel_attributes>/Suscripcion/
+--
+- codigoSuscripcion: int
+- fechaInicio: Date
+- fechaFin: Date
+- isActiva(): boolean
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>360</y><w>112</w><h>56</h></coordinates><panel_attributes>SuscripcionPapel
+--
+- direccion: String
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>192</x><y>360</y><w>128</w><h>56</h></coordinates><panel_attributes>SuscripcionDigitalBasica
+--
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>360</y><w>136</w><h>56</h></coordinates><panel_attributes>SuscripcionDigitalPremium
+--
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>328</x><y>592</y><w>112</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Seccion
+--
++ INTERNACIONAL
++ NACIONAL
++ ECONOMIA
++ SOCIEDAD
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>272</y><w>184</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>210;10;210;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>272</y><w>24</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>272</y><w>232</w><h>104</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;270;80;270;110</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>136</y><w>96</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2= *
+suscripciones
+</panel_attributes><additional_attributes>100;10;100;50;10;50;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>424</x><y>136</y><w>120</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2= *
+suscriptores</panel_attributes><additional_attributes>10;10;10;50;120;50;120;80</additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>136</y><w>72</w><h>368</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2= articulos  *
+</panel_attributes><additional_attributes>10;10;10;440</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>408</y><w>104</w><h>128</h></coordinates><panel_attributes>lt=&lt;-
+m1= articulos  *</panel_attributes><additional_attributes>110;130;10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>408</y><w>88</w><h>128</h></coordinates><panel_attributes>lt=&lt;-
+m1=* articulos  </panel_attributes><additional_attributes>10;130;50;130;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>224</y><w>144</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n suscripciones</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>536</y><w>64</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=1 
+m2=seccion  </panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>136</y><w>368</w><h>544</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2= 1..4   secciones</panel_attributes><additional_attributes>80;10;80;40;440;40;440;650;10;650</additional_attributes></element></diagram>

@@ -1,0 +1,48 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>280</x><y>350</y><w>330</w><h>110</h></coordinates><panel_attributes>_: Pedido_
+--
+id= 8
+fecha_hora_realizacion= 2026-02-18 16:28
+fecha_hora_entrega= null
+fecha_hora_asignaRepartidor= 2026-02-18 16:48
+estadoPedido= ENREPARTO
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>130</y><w>210</w><h>120</h></coordinates><panel_attributes>_: Cliente_
+--
+usuario= "pepito"
+contraseña="abcd"
+nombre="pepito"
+dni= "01234567A"
+num_tarjeta= "123456"
+direccion="eps"
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>530</y><w>210</w><h>70</h></coordinates><panel_attributes>_: Especial_
+--
+precioBase= 8.0
+tipoEspecial= MARGARITA
+tamaño= 	GRANDE
+masa= FINA
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>530</y><w>210</w><h>70</h></coordinates><panel_attributes>_: Bebida_
+--
+tipoBebida= BOTELLA_AGUA
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>530</y><w>210</w><h>70</h></coordinates><panel_attributes>_: Bebida_
+--
+tipoBebida= BOTELLA_AGUA
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>190</y><w>210</w><h>70</h></coordinates><panel_attributes>_: Gestor_
+--
+usuario= "juanito"
+contraseña="abcd"
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>370</y><w>210</w><h>70</h></coordinates><panel_attributes>_: Repartidor_
+--
+usuario= "jaimito"
+contraseña="abcd"
+estadoRepartidor= ENREPARTO
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>240</y><w>70</w><h>130</h></coordinates><panel_attributes>lt=-
+
+realiza</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>450</y><w>160</w><h>100</h></coordinates><panel_attributes>lt=-
+
+contiene</panel_attributes><additional_attributes>140;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>450</y><w>80</w><h>100</h></coordinates><panel_attributes>lt=-
+
+contiene</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>450</y><w>170</w><h>100</h></coordinates><panel_attributes>lt=-
+contiene</panel_attributes><additional_attributes>10;10;150;80</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>250</y><w>70</w><h>140</h></coordinates><panel_attributes>lt=-
+asigna</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>390</y><w>150</w><h>40</h></coordinates><panel_attributes>lt=-
+asignado</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element></diagram>

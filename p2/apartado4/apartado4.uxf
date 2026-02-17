@@ -1,0 +1,124 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>424</x><y>544</y><w>152</w><h>80</h></coordinates><panel_attributes>/Pizza/
+--
+- precioBase: double
+--
++ calcularPrecio(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>328</x><y>720</y><w>88</w><h>32</h></coordinates><panel_attributes>Especial
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>720</y><w>128</w><h>48</h></coordinates><panel_attributes>Configurable
+--
+--
++ calcularPrecio(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>720</y><w>136</w><h>48</h></coordinates><panel_attributes>PorMitades
+--
+--
++ calcularPrecio(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>816</y><w>112</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoEspecial
+--
++ MARGARITA
++ VEGETARIANA
++ PEPPERONI
++ CUATROQUESOS</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>816</y><w>176</w><h>104</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Ingrediente
+--
++ BACON
++ PIÑA
++ ATUN
++ EXTRAQUESO
+--
+- coste: double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>448</y><w>112</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Tamaño
+--
++ PEQUEÑA
++ MEDIANA
++ GRANDE
+--
+- recargo: double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>616</y><w>112</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Masa
+--
++ FINA
++ NORMAL
++ GRUESA
+--
+- recargo: double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>728</x><y>512</y><w>144</w><h>48</h></coordinates><panel_attributes>Bebida
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>616</y><w>104</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>496</x><y>616</y><w>24</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>616</y><w>192</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;220;130</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>488</y><w>120</w><h>96</h></coordinates><panel_attributes>lt=&lt;-
+tamaño </panel_attributes><additional_attributes>10;10;130;100</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>568</y><w>120</w><h>104</h></coordinates><panel_attributes>lt=&lt;-
+masa</panel_attributes><additional_attributes>10;110;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>744</y><w>40</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+tipo</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>504</x><y>760</y><w>80</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=* 
+m2=ingredientes</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>728</y><w>80</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+2 mitades</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>552</x><y>376</y><w>224</w><h>104</h></coordinates><panel_attributes>Pedido
+--
+- id: int
+- fecha_hora_realizacion: LocalDateTime
+- fecha_hora_entrega: LocalDateTime
+- fecha_hora_asignaRepartidor: LocalDateTime
+--
++ calcularPrecioTotal(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>472</y><w>96</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* pizzas</panel_attributes><additional_attributes>100;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>728</x><y>472</y><w>80</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* bebidas</panel_attributes><additional_attributes>10;10;80;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>256</x><y>96</y><w>208</w><h>72</h></coordinates><panel_attributes>/Usuario/
+--
+- usuario: String
+- contraseña: String
+--
+ inicioSesion(u: String, c: String): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>376</y><w>144</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+EstadoPedido
+--
++ REALIZADO
++ ENREPARTO
++ ENTREGADO
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>768</x><y>408</y><w>96</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+estado</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>280</y><w>272</w><h>48</h></coordinates><panel_attributes>Gestor
+--
+--
++ asignarRepartidor(r: Repartidor, p: Pedido): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>344</y><w>216</w><h>48</h></coordinates><panel_attributes>Repartidor
+--
+--
++ marcarPedidoEntregado(p: Pedido): void
++ estaDisponible(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>512</x><y>232</y><w>200</w><h>88</h></coordinates><panel_attributes>Cliente
+--
+- nombre: String
+- dni: String
+- num_tarjeta: String
+- direccion: String
+--
++ realizarPedido(): Pedido</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>656</x><y>312</y><w>40</w><h>80</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=0..1
+</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>416</x><y>384</y><w>152</w><h>48</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=0..1
+</panel_attributes><additional_attributes>170;30;10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>320</y><w>120</w><h>72</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;70;10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>112</x><y>320</y><w>456</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>550;130;10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>160</y><w>24</w><h>200</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>424</x><y>160</y><w>184</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;210;90</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>160</y><w>192</w><h>136</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>220;10;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>368</x><y>232</y><w>112</w><h>64</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+EstadoRepartidor
+--
++ DISPONIBLE
++ ENREPARTO
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>416</x><y>288</y><w>56</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+estado</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>752</x><y>32</y><w>288</w><h>120</h></coordinates><panel_attributes>Aplicacion
+--
+--
++ totalRecaudadoDia(fecha: LocalDate): double
++ getRepartidorDisponible(): Repartidor[*]
++ getRepartidorEnreparto(): Repartidor[*]
++ tiempoMedio_Preparacion(): double
++ tiempoMedio_Servicio(): double
++ repartidor_MayorTiempo(): Repartidor</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>40</y><w>384</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* usuarios</panel_attributes><additional_attributes>460;10;10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>144</y><w>64</w><h>248</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* pedidos</panel_attributes><additional_attributes>10;10;10;290</additional_attributes></element><element><id>Relation</id><coordinates><x>568</x><y>144</y><w>488</w><h>552</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* pizzas</panel_attributes><additional_attributes>590;10;590;670;110;670;110;580;10;580</additional_attributes></element><element><id>Relation</id><coordinates><x>864</x><y>144</y><w>160</w><h>432</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m2=* bebidas</panel_attributes><additional_attributes>180;10;180;510;10;510</additional_attributes></element><element><id>UMLClass</id><coordinates><x>816</x><y>584</y><w>144</w><h>88</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoBebida
+--
++ REFRESCO_COLA
++ BOTELLA_AGUA
++ CERVEZA_SIN
+--
+- precio: double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>752</x><y>552</y><w>80</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+
+m2=tipo</panel_attributes><additional_attributes>80;90;10;90;10;10</additional_attributes></element></diagram>
