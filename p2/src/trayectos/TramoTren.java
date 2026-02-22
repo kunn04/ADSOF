@@ -13,7 +13,7 @@ public class TramoTren extends TramoTrayecto {
 
     @Override
     public double tiempo(){
-        return this.numParadas*this.linea;
+        return this.numParadas*this.linea.getStopTime;
     }
 
     @Override

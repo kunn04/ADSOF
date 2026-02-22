@@ -11,7 +11,11 @@ public enum Ritmo{
         this.tiempo = tiempo;
     }
 
+    public int getTimeKm(){
+        return this.tiempo;
+    }
+
     public String toString(){
-        return " (ritmo "+this.ritmo+")";
+        return " (ritmo "+this.name+")";
     }
 }
