@@ -5,7 +5,7 @@ public class Main{
         TramoTrayecto[] trayecto = {
             new TramoAPie("Hotel Puerta del Sol", "Sol Renfe", 1),
             new TramoTren("Sol Renfe", "Cantoblanco Renfe", Linea.C4, 4),
-            new TramoApie("Cantoblanco Renfe", "EPS", 2.6, Ritmo.RAPIDO),
+            new TramoAPie("Cantoblanco Renfe", "EPS", 2.6, Ritmo.RAPIDO),
 
         };
 

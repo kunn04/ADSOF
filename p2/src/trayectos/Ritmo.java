@@ -16,6 +16,6 @@ public enum Ritmo{
     }
 
     public String toString(){
-        return " (ritmo "+this.name+")";
+        return " (ritmo "+this.name()+")";
     }
 }
