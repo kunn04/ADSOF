@@ -1,3 +1,11 @@
+package src;
+
+/**
+ * Esta clase representa una serie de pruebas para la clase Usuario, que incluye tests para la creación de usuarios, añadir enlaces, evitar duplicados y autorreferencias, y acceder a los enlaces por posición o destino.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Version: 1.0
+ * Nombre del fichero: Usuario.java
+ */
 public class TestUsuario {
 
     public static void main(String[] args) {

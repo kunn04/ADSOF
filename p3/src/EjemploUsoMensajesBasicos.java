@@ -1,3 +1,11 @@
+package src;
+
+/**
+ * Esta clase representa son la serie de pruebas que nos dan a probar en el enunciado.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Version: 1.0
+ * Nombre del fichero: EjemploUsoMensajesBasicos.java
+ */
 public class EjemploUsoMensajesBasicos {
     public static void main(String[] args) {
         Usuario ana = new Usuario("ana", 1);

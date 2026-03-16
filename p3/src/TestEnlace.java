@@ -1,3 +1,11 @@
+package src;
+
+/**
+ * Esta clase representa una serie de pruebas para la clase Enlace, que incluye tests para la creación de enlaces con y sin coste, manejo de costes negativos o cero, cambio de destino y cálculo de costes especiales y reales.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Version: 1.0
+ * Nombre del fichero: TestEnlace.java
+ */
 public class TestEnlace {
 
     public static void main(String[] args) {
