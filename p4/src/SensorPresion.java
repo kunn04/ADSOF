@@ -1,8 +1,8 @@
 import java.time.*;
 
 public class SensorPresion extends Sensor {
-    public SensorPresion(double offset, LocalDate fecha_instalacion) {
-        super(offset, fecha_instalacion, TipoSensor.PRES);
+    public SensorPresion(double offset, LocalDate fecha_instalacion, Estrategia estrategia) {
+        super(offset, fecha_instalacion, TipoSensor.PRES, estrategia);
     }
 
     @Override

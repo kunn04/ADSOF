@@ -3,8 +3,8 @@ import java.time.*;
 public class SensorTemperatura extends Sensor {
     private String unidad = "°C";
 
-    public SensorTemperatura(double offset, LocalDate fecha_instalacion) {
-        super(offset, fecha_instalacion, TipoSensor.TEMP);
+    public SensorTemperatura(double offset, LocalDate fecha_instalacion, Estrategia estrategia) {
+        super(offset, fecha_instalacion, TipoSensor.TEMP, estrategia);
     }
 
     @Override

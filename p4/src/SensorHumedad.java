@@ -2,8 +2,8 @@ import java.time.*;
 
 
 public class SensorHumedad extends Sensor {
-    public SensorHumedad(double offset, LocalDate fecha_instalacion) {
-        super(offset, fecha_instalacion, TipoSensor.HUM);
+    public SensorHumedad(double offset, LocalDate fecha_instalacion, Estrategia estrategia) {
+        super(offset, fecha_instalacion, TipoSensor.HUM, estrategia);
     }
 
     @Override

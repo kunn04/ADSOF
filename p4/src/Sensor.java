@@ -9,14 +9,33 @@ public abstract class Sensor {
     private LocalDate fecha_instalacion;
     private TipoSensor tipo;
     private static Map<TipoSensor, Integer> contadoresId = new HashMap<>();
+    private List<Double> lecturas = new ArrayList<>();
+    private Estrategia estrategia;
 
-    public Sensor(double offset, LocalDate fecha_instalacion, TipoSensor tipo) {
+    public Sensor(double offset, LocalDate fecha_instalacion, TipoSensor tipo, Estrategia estrategia) {
         this.offset = offset;
         this.fecha_instalacion = fecha_instalacion;
         this.tipo = tipo;
         int nuevoContador = contadoresId.getOrDefault(tipo, 0) + 1;
         contadoresId.put(tipo, nuevoContador);
         this.id = tipo.name() + "-" + String.format("%04d", nuevoContador);
+
+        if (estrategia == null) {
+            switch (tipo) {
+                case TEMP:
+                    this.estrategia = new Estrategia_Rango(5); // cambios suaves
+                    break;
+                case HUM:
+                    this.estrategia = new Estrategia_Media(10); // estable
+                    break;
+                case PRES:
+                    this.estrategia = new Estrategia_Min_Max(0.05); // más variable
+                    break;
+            }
+        }
+        else {
+            this.estrategia = estrategia;
+        }
     }
 
     public String getId() {
@@ -46,6 +65,16 @@ public abstract class Sensor {
     public void lectura(double valor_simulado) {
         this.valor_Ul = valor_simulado - this.offset;
         this.fecha_Ul = LocalDateTime.now();
+    }
+
+    public List<Double> getLecturas() {
+        return lecturas;
+    }
+
+    public void simularLectura() {
+        double valor_simulado = estrategia.generarValor(this);
+        this.lectura(valor_simulado);
+        this.lecturas.add(this.valor_Ul);
     }
 
     public abstract double getMin();
