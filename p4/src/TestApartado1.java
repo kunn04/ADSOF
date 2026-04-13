@@ -1,6 +1,24 @@
+/**
+ * Esta clase forma parte de la practica ADSOF (P4).
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Grupo: 2262
+ * Version: 1.0
+ * Nombre del fichero: TestApartado1.java
+ */
 import java.time.*;
 
+import estacion.EstacionMeteorologica;
+import excepciones.ConversorIncompatibleException;
+import excepciones.SensorDuplicadoException;
+import sensores.Sensor;
+import sensores.SensorHumedad;
+import sensores.SensorPresion;
+import sensores.SensorTemperatura;
+
 public class TestApartado1 {
+    /**
+     * Metodo publico de la clase.
+     */
     public static void main(String[] args) {
         EstacionMeteorologica estacion = new EstacionMeteorologica("Madrid Centro", 40.4168, -3.7038);
 
@@ -11,15 +29,16 @@ public class TestApartado1 {
 
 
         System.out.println(estacion);
-
-        estacion.addSensor(sensorTemp);
-        estacion.addSensor(sensorHum);
-        estacion.addSensor(sensorPres);
-        estacion.addSensor(sensorPres2);
+        try {
+            estacion.addSensor(sensorTemp);
+            estacion.addSensor(sensorHum);
+            estacion.addSensor(sensorPres);
+            estacion.addSensor(sensorPres2);
+        } catch (SensorDuplicadoException | ConversorIncompatibleException e) {
+            System.out.println(e.getMessage());
+        }
         estacion.lecturaSensor(50);
         System.out.println("Sensores en la estación:");
-        for(Sensor s: estacion.getSensores()) {
-            System.out.println(s);  
-        }
+        System.out.println(estacion.getSensores());
     }
 }
