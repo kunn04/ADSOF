@@ -23,14 +23,15 @@ public class TestApartado3 {
         // 2. Obtenemos el predicado para la etiqueta "female" (que viene de un 'otherwise')
         Predicate<Person> isFemale = dt.getPredicate("female");
 
-        Person p1 = new Person("Pedro", 66, 75, 180, true);  // Es Old Male
-        Person p2 = new Person("Ana", 47, 54, 158, false);    // Es Female
-        Person p3 = new Person("Luis", 34, 75, 176, true);   // NO es Old Male (es Middle)
+        Person p1 = new Person("Pedro", 66, 75, 180, true);  
+        Person p2 = new Person("Ana", 47, 54, 158, false);    
+        Person p3 = new Person("Luis", 34, 75, 176, true);   
 
         System.out.println("--- Verificación de Predicados ---");
         System.out.println(p1.getName() + " es 'old male'?: " + isOldMale.test(p1)); // true
         System.out.println(p3.getName() + " es 'old male'?: " + isOldMale.test(p3)); // false
         System.out.println(p2.getName() + " es 'female'?: " + isFemale.test(p2));   // true
+        System.out.println(p3.getName() + " es 'female'?: " + isFemale.test(p3));   // false
         
         // 3. Prueba con un Dataset
         Dataset<Person> dataSet = buildDataSet();

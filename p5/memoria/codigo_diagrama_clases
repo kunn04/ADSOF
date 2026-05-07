@@ -1,0 +1,80 @@
+@startuml
+
+class Dataset<T> {
+    - Featurizer<T> featurizer
+    - Map<String, Feature<? extends Comparable>> data
+    - List<T> objects
+    + Dataset(featurizer: Featurizer<T>)
+    + getObjects(): List<T>
+    + add(object: T): void
+    + addAll(objects: T[]): Dataset<T>
+    + feature(name: String): Feature<V>
+    + removeDuplicates(): void
+    + toString(): String
+}
+
+class Feature<V> {
+    + min(): V
+    + max(): V
+    + distribution(): Map<V, Integer>
+}
+
+interface Featurizer<T> {
+    + getFeatureNames(): List<String>
+    + getFeatureValue(object: T): Map<String, Object>
+}
+
+
+class DecisionTree<T> {
+    - String rootNodeName
+    - Map<String, Node> nodes
+    + node(name: String): Node
+    + predict(objects: T...): Map<String, List<T>>
+    + predict(objects: Collection<T>): Map<String, List<T>>
+    + predict(dataset: Dataset<T>): Map<String, List<T>>
+    + getPredicate(label: String): Predicate<T>
+}
+
+class Node {
+    - String name
+    - List<Branch> branches
+    - String fallbackNode
+    + withCondition(targetNode: String, condition: Predicate<T>): Node
+    + otherwise(targetNode: String): void
+}
+
+class Branch {
+    - String targetNode
+    - Predicate<T> condition
+}
+
+class Person {
+    - String name
+    - int age
+    - double weight
+    - int height
+    - boolean male
+    + getName(): String
+    + getAge(): int
+    + getWeight(): double
+    + getHeight(): int
+    + isMale(): boolean
+    + toString(): String
+}
+
+class PersonFeaturizer {
+    + getFeatureNames(): List<String>
+    + getFeatureValue(p: Person): Map<String, Object>
+}
+
+
+PersonFeaturizer ..|> Featurizer
+Dataset --> Featurizer
+Dataset --> Feature
+DecisionTree --> Node
+Node --> Branch
+DecisionTree --> Dataset
+PersonFeaturizer --> Person
+
+
+@enduml

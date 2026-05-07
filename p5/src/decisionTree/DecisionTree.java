@@ -18,7 +18,7 @@ public class DecisionTree<T> {
     private final Map<String, Node> nodes = new LinkedHashMap<>();
 
     /**
-     * Constructor interno para configurar los nodos y sus ramas.
+     * Clase interna para configurar los nodos y sus ramas.
      */
     public class Node {
         private final String name;
@@ -98,7 +98,7 @@ public class DecisionTree<T> {
      */
     private String predictSingle(T object) {
         if (rootNodeName == null) {
-            throw new IllegalStateException("El árbol de decisión está vacío.");
+            return null;
         }
 
         String currentNodeName = rootNodeName;
@@ -106,7 +106,6 @@ public class DecisionTree<T> {
         while (true) {
             Node node = nodes.get(currentNodeName);
 
-            // Es un nodo hoja si no ha sido definido con ramas o fallback
             if (node == null || (node.branches.isEmpty() && node.fallbackNode == null)) {
                 return currentNodeName;
             }
@@ -120,14 +119,11 @@ public class DecisionTree<T> {
                 }
             }
 
-            // Mecanismo de control si no se cumple ninguna condición
             if (!matched) {
                 if (node.fallbackNode != null) {
                     currentNodeName = node.fallbackNode;
                 } else {
-                    throw new IllegalStateException(
-                        String.format("Objeto atascado en el nodo '%s'. No cumple ninguna condición y no tiene 'otherwise'.", currentNodeName)
-                    );
+                    return currentNodeName;
                 }
             }
         }
@@ -198,7 +194,6 @@ public class DecisionTree<T> {
         Node node = nodes.get(currentNodeName);
         if (node == null) return false;
 
-        // 1. Probar por las ramas con condición
         for (Branch branch : node.branches) {
             path.add(branch.condition);
             if (findPath(branch.targetNode, targetLabel, path, visited)) {
@@ -207,7 +202,6 @@ public class DecisionTree<T> {
             path.remove(path.size() - 1);
         }
 
-        // 2. Probar por el camino 'otherwise'
         if (node.fallbackNode != null) {
             Predicate<T> noneOfBranches = obj -> {
                 for (Branch b : node.branches) {

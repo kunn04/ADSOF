@@ -34,7 +34,7 @@ public class Dataset<T> {
      * @return lista de objetos
      */
     public List<T> getObjects() {
-        return objects;
+        return this.objects;
     }
 
     /** 
@@ -91,7 +91,6 @@ public class Dataset<T> {
             }
         }
 
-        // Limpiamos las columnas y reinsertamos solo los valores únicos
         data.values().forEach(List::clear);
         for (List<Comparable> row : uniqueRows) {
             int colIdx = 0;
