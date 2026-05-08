@@ -5,7 +5,10 @@ import java.util.Random;
 import dataset.LabeledDataset;
 
 /**
- * Seleccion aleatoria de features.
+ * Esta clase representa una estrategia de selección de características (RandomFeatureStrategy) para el aprendizaje de árboles de decisión, que elige una característica al azar de la lista de características disponibles para dividir un dataset durante el proceso de construcción del árbol.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: RandomFeatureStrategy.java
  */
 public class RandomFeatureStrategy<T, L> implements FeatureSelectionStrategy<T, L> {
 

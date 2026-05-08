@@ -7,7 +7,10 @@ import java.util.function.Predicate;
 import decisionTree.visitor.DecisionTreeVisitor;
 
 /**
- * Nodo de un arbol de decision con sus ramas de salida.
+ * Esta clase representa un nodo en un árbol de decisión, que contiene una lista de ramas (condiciones) y una rama de respaldo (fallback) para manejar casos que no cumplen ninguna condición.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: Node.java
  */
 public class Node<T> implements DecisionTreeElement<T> {
 

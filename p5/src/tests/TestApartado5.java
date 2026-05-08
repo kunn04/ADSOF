@@ -9,7 +9,10 @@ import decisionTree.learning.MisclassificationStrategy;
 import decisionTree.learning.RandomFeatureStrategy;
 
 /**
- * Prueba de distintas estrategias de seleccion de features.
+ * Prueba de aprendizaje de árboles de decisión utilizando diferentes estrategias de selección de características (RandomFeatureStrategy y MisclassificationStrategy) para construir árboles a partir de un dataset etiquetado, y luego realizando predicciones con los árboles aprendidos.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: TestApartado5.java
  */
 public class TestApartado5 {
 

@@ -4,7 +4,10 @@ import java.util.function.Predicate;
 import decisionTree.visitor.DecisionTreeVisitor;
 
 /**
- * Rama de un nodo, con condicion y nodo de destino.
+ * Esta clase representa una rama de un nodo en un árbol de decisión, que define la condición para seguir esa rama y el nodo de destino al que conduce.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: Branch.java
  */
 public class Branch<T> implements DecisionTreeElement<T> {
 

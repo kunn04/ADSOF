@@ -9,7 +9,6 @@ import java.util.*;
  * Versión: 1.0
  * Nombre del fichero: Feature.java
  */
-
 public class Feature<V extends Comparable<? super V>> extends ArrayList<V> {
 
     /** 

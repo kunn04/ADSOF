@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Dataset que almacena etiquetas en paralelo a los objetos.
+ * Esta clase representa un dataset etiquetado (LabeledDataset) que extiende de Dataset,
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: LabeledDataset.java
  */
 public class LabeledDataset<T, L> extends Dataset<T> {
 

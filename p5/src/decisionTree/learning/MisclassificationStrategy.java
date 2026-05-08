@@ -7,7 +7,10 @@ import dataset.Feature;
 import dataset.LabeledDataset;
 
 /**
- * Elige la feature con menor error de clasificacion.
+ * Esta clase representa una estrategia de selección de características (MisclassificationStrategy) para el aprendizaje de árboles de decisión, que elige la característica que minimiza el número de errores de clasificación (misclassification) al dividir un dataset durante el proceso de construcción del árbol.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: MisclassificationStrategy.java
  */
 public class MisclassificationStrategy<T, L> implements FeatureSelectionStrategy<T, L> {
 

@@ -13,7 +13,10 @@ import decisionTree.DecisionTree;
 import decisionTree.Node;
 
 /**
- * Aprende un arbol de decision con un enfoque greedy.
+ * Esta clase representa un aprendiz de árboles de decisión codicioso (GreedyTreeLearner) que utiliza una estrategia de selección de características para construir un árbol de decisión a partir de un dataset etiquetado.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: GreedyTreeLearner.java
  */
 public class GreedyTreeLearner<T, L> {
 

@@ -6,7 +6,10 @@ import decisionTree.DecisionTree;
 import decisionTree.learning.GreedyTreeLearner;
 
 /**
- * Prueba del aprendizaje greedy a partir de un dataset etiquetado.
+ * Prueba de aprendizaje de un árbol de decisión a partir de un dataset etiquetado, utilizando el GreedyTreeLearner para construir el árbol y luego realizando predicciones con el árbol aprendido.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: TestApartado4.java
  */
 public class TestApartado4 {
 

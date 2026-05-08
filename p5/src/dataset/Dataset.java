@@ -9,7 +9,6 @@ import java.util.*;
  * Versión: 1.0
  * Nombre del fichero: Dataset.java
  */
-
 public class Dataset<T> {
 
     protected final Featurizer<T> featurizer;

@@ -4,7 +4,10 @@ import decisionTree.visitor.GraphvizVisitor;
 import decisionTree.visitor.IndentedTextVisitor;
 
 /**
- * Prueba de los visualizadores del arbol de decision.
+ * Prueba de generación de representaciones visuales (DOT y texto indentado) de un árbol de decisión construido manualmente, utilizando los visitantes GraphvizVisitor e IndentedTextVisitor para recorrer el árbol y generar las representaciones correspondientes.
+ * Autor: Adrián Gómez y Javier Agüero (adrian.gomezretamal@estudiante.uam.es y javier.aguero@estudiante.uam.es)
+ * Versión: 1.0
+ * Nombre del fichero: TestApartado6.java
  */
 public class TestApartado6 {
 

@@ -24,7 +24,6 @@ interface Featurizer<T> {
     + getFeatureValue(object: T): Map<String, Object>
 }
 
-
 class DecisionTree<T> {
     - String rootNodeName
     - Map<String, Node> nodes
@@ -33,6 +32,7 @@ class DecisionTree<T> {
     + predict(objects: Collection<T>): Map<String, List<T>>
     + predict(dataset: Dataset<T>): Map<String, List<T>>
     + getPredicate(label: String): Predicate<T>
+    + accept(visitor: DecisionTreeVisitor<T>, depth: int): void
 }
 
 class Node {
@@ -41,11 +41,13 @@ class Node {
     - String fallbackNode
     + withCondition(targetNode: String, condition: Predicate<T>): Node
     + otherwise(targetNode: String): void
+    + accept(visitor: DecisionTreeVisitor<T>, depth: int): void
 }
 
 class Branch {
     - String targetNode
     - Predicate<T> condition
+    + accept(visitor: DecisionTreeVisitor<T>, depth: int): void
 }
 
 class Person {
@@ -67,7 +69,53 @@ class PersonFeaturizer {
     + getFeatureValue(p: Person): Map<String, Object>
 }
 
+' --- NUEVAS CLASES E INTERFACES (Apartados 4, 5 y 6) ---
 
+interface LabelProvider<T, L> {
+    + getLabel(object: T): L
+}
+
+class LabeledDataset<T, L> {
+    - LabelProvider<T, L> labelProvider
+    - List<L> labels
+    + getLabels(): List<L>
+    + labelAt(index: int): L
+}
+
+interface DecisionTreeElement<T> {
+    + accept(visitor: DecisionTreeVisitor<T>, depth: int): void
+}
+
+interface FeatureSelectionStrategy<T, L> {
+    + chooseFeature(dataset: LabeledDataset<T, L>, availableFeatures: List<String>): String
+}
+
+class RandomFeatureStrategy<T, L> {
+}
+
+class MisclassificationStrategy<T, L> {
+}
+
+class GreedyTreeLearner<T, L> {
+    - FeatureSelectionStrategy<T, L> strategy
+    + learn(dataSet: LabeledDataset<T, L>): DecisionTree<T>
+}
+
+interface DecisionTreeVisitor<T> {
+    + visitTree(tree: DecisionTree<T>): void
+    + visitNode(node: Node<T>, depth: int): void
+    + visitBranch(branch: Branch<T>, depth: int): void
+}
+
+class GraphvizVisitor<T> {
+    + getDot(): String
+}
+
+class IndentedTextVisitor<T> {
+    + getText(): String
+}
+
+' --- RELACIONES BASE ---
 PersonFeaturizer ..|> Featurizer
 Dataset --> Featurizer
 Dataset --> Feature
@@ -76,5 +124,25 @@ Node --> Branch
 DecisionTree --> Dataset
 PersonFeaturizer --> Person
 
+' --- NUEVAS RELACIONES ---
+' Apartado 4: LabeledDataset
+LabeledDataset --|> Dataset
+LabeledDataset --> LabelProvider
+
+' Apartado 5: Estrategias
+GreedyTreeLearner --> FeatureSelectionStrategy
+GreedyTreeLearner ..> DecisionTree : creates
+RandomFeatureStrategy ..|> FeatureSelectionStrategy
+MisclassificationStrategy ..|> FeatureSelectionStrategy
+
+' Apartado 6: Patrón Visitor
+DecisionTree ..|> DecisionTreeElement
+Node ..|> DecisionTreeElement
+Branch ..|> DecisionTreeElement
+
+DecisionTreeElement ..> DecisionTreeVisitor : accepts
+
+GraphvizVisitor ..|> DecisionTreeVisitor
+IndentedTextVisitor ..|> DecisionTreeVisitor
 
 @enduml
