@@ -77,8 +77,7 @@ public class Person {
      * @return representación en cadena
      */
     public String toString() {
-        return String.format("%s(age:%d, %s]", 
-            name, age, male ? "male" : "female");
+        return name + "(age: " + age + ", " + (male ? "male" : "female") + ")";
     }
     
 }

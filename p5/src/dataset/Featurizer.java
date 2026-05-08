@@ -21,7 +21,7 @@ public interface Featurizer<T> {
     /** 
      * Extrae los valores de las características de un objeto.
      * @param object objeto del que se extraen las características
-     * @return mapa con nombre de característica y su valor
+     * @return mapa con nombre de caracteristica y su valor (comparables)
      */
-    Map<String, Object> getFeatureValue(T object);
+    Map<String, ? extends Comparable<?>> getFeatureValue(T object);
 }
